@@ -1,35 +1,31 @@
-(function(window) {
 
-
-  //function convertToRoman(num) {
-  //return num;
+//class Polygon {
+  //constructor(height, width) {
+    //this.height = height;
+    //this.width = width;
   //}
 
-  //convertToRoman(36);
+  //get area() {
+    //return this.calcArea();
+  //}
 
-  //var arr =['xav', 'tab', 'text', 'fou'];
-  //console.log(arr.length);//4
-  //console.log(arr.length - 1);//3
-
-    //var o = {
-      //ca : 2,
-      //xx : 5
-    //};
-    //o.ca = 2;
-    //console.log(o.ca);
+  //calcArea() {
+    //return this.height * this.width;
+  //}
+//}
 
 
-
+(function(window) {
   function convertToRoman(num) {
-
     //transforme en chaine puis compte le combre de caractere.
     //console.log(num.toString().length );
-    var cast, castLen, arr, arrRoman, count=0, alphaRoman, obj={}, add='';
+    let cast, castLen, arr, arrRoman, count=0, alphaRoman, obj={}, add='';
 
-    alphaRoman = {
+    //console.log(oave );
+    //alphaRoman = {
       //{
-        val :'1', 
-        numRoman : 'I'
+        //val :'1', 
+        //numRoman : 'I'
       //}
       //{
         //val :5,    
@@ -55,29 +51,42 @@
         //val :1000    
         //numRoman : M
       //}
-    };
+    //};
     //alphaRoman.10;
     //console.log(alphaRoman.V);
 
-    cast= num.toString();
-    console.log(cast);
-    for (var i = 0, len = cast.length; i < len; i++) {
-      console.log(cast[i]);
-      if (cast[i] <=3) {
-        for (var j = 0, l= cast[i]; j < l; j++) {
-          console.log(add += alphaRoman.I + ' : '+ l);
+    //var aobj = {here: {is: "an"}, object: 2};
+    arrRoman = {
+        val :{
+          1: 'I',
+          5: 'V',
+          10: 'X',
+          50: 'L',
+          100: 'C',
+          500: 'D',
+          1000: 'M'
         }
-      }
-      console.log(add);
-      //console.log(count);
-      return 0;
-    }
-    
+    };
 
+
+    cast= num.toString();
+    console.log(cast.length );// chiffre dans le nombre
+
+    //console.log(add += arrRoman.valRoman.I + cast[0] + ' : ');
+    //
+    if (cast[0] <='3') {
+      for (var i = 0, len = cast[0]; i < len; i++) {
+        console.log(arrRoman.val['1'] );
+      }
+    }else if(cast[0] === '4'){// ignore jhint
+      console.log(arrRoman.val['1'] + arrRoman.val['5'] );
+    }else{
+      console.log(arrRoman.val['5']);
+    }
     return num;
   }
 
-  convertToRoman(36);
+  convertToRoman(46);
 
 
   //convertToRoman(2) should return "II".
